@@ -22,3 +22,14 @@ applyTo: "src/**/*.py"
   ```python
   # Calculate the average value
   # 平均値を計算する
+  ```
+
+## Error Handling
+
+* Use exceptions, not return codes.
+* Raise specific exception classes (avoid generic `Exception`).
+
+## Testing
+
+* Use `pytest`.
+* Keep tests under `tests/` with file name `test_*.py`.
