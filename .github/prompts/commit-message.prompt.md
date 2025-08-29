@@ -1,7 +1,7 @@
 ---
-mode: 'agent'
-tools: ['githubRepo', 'codebase', 'documentation']
-description: 'Generate a clear, conventional commit message based on the changes in the current branch or staged files.'
+mode: ask
+tools: [git]
+description: Generate a clear, conventional commit message based on the changes in the current branch or staged files.
 ---
 
 # Commit Message Generator
