@@ -1,0 +1,20 @@
+include: package:flutter_lints/flutter.yaml
+
+# Additional rules can be added here
+# 追加のルールをここに記述できます
+
+linter:
+  rules:
+    # Dart コーディング規約に従った追加ルール
+    # Additional rules following Dart coding conventions
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    always_declare_return_types: true
+    avoid_print: true
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"

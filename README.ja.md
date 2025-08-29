@@ -94,6 +94,16 @@ README.zh.md                          # プロジェクトREADME（中国語版�
 * Prettier / ESLint / Flake8 などのリンターやフォーマッター
 * CI/CD チェックを GitHub Actions に統合（推奨）
 
+### Flutter/Dart 開発環境
+
+このテンプレートには Flutter/Dart 環境構築が含まれています：
+
+* **Flutterテンプレート** (`flutter_template/`) - VSCode設定を含む完全なFlutterプロジェクト構造
+* **Dartテンプレート** (`dart_template/`) - CLIアプリケーション用のスタンドアロンDartプロジェクト
+* **拡張されたDart指示** (`.github/instructions/coding/dart.instructions.md`) - 包括的なFlutter/Dartコーディングガイドライン
+
+Flutter環境構築の手順については、[`flutter_template/README.md`](flutter_template/README.md) を参照してください。
+
 ---
 
 ## ライセンス

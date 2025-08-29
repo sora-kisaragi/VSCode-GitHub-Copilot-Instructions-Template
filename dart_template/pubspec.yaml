@@ -1,0 +1,14 @@
+name: dart_sample_project
+description: A sample Dart project template for GitHub Copilot Instructions
+version: 1.0.0
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  # Add any required dependencies here
+  # 必要な依存関係をここに追加
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

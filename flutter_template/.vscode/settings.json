@@ -1,0 +1,37 @@
+{
+  // Flutter specific settings
+  // Flutter固有の設定
+  "dart.flutterSdkPath": null,
+  "dart.analysisServer": "legacy",
+  "dart.previewLsp": false,
+  
+  // Editor settings for Dart/Flutter
+  // Dart/Flutter用のエディタ設定
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  
+  // File associations
+  // ファイル関連付け
+  "files.associations": {
+    "*.dart": "dart"
+  },
+  
+  // Auto format and linting
+  // 自動フォーマットとリンティング
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  
+  // Flutter specific extensions recommendations
+  // Flutter固有の推奨拡張機能
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false
+}

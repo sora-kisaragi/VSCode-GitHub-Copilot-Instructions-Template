@@ -94,6 +94,16 @@ README.zh.md                          # Project README (Chinese)
 * Prettier / ESLint / Flake8 or equivalent linters/formatters
 * CI/CD checks integrated using GitHub Actions (optional but recommended)
 
+### Flutter/Dart Development Environment
+
+This template includes Flutter/Dart environment setup:
+
+* **Flutter Template** (`flutter_template/`) - Complete Flutter project structure with VSCode settings
+* **Dart Template** (`dart_template/`) - Standalone Dart project for CLI applications
+* **Enhanced Dart Instructions** (`.github/instructions/coding/dart.instructions.md`) - Comprehensive Flutter/Dart coding guidelines
+
+For Flutter setup instructions, see: [`flutter_template/README.md`](flutter_template/README.md)
+
 ---
 
 ## License
