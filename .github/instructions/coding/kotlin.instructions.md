@@ -1,32 +1,44 @@
 ---
-applyTo: "**/*.dart"
+applyTo: "**/*.kt"
 ---
 
-# Flutter / Dart Coding Standards
+# Kotlin / Android Framework Guidelines
 
-## Comments
-- Use English for main comments, Japanese for clarification if necessary.
-- Document public methods and classes with DartDoc style.
+Follow the [Kotlin Style Guide](https://developer.android.com/kotlin/style-guide) and Android best practices for consistent code and readability.
 
-## Naming Conventions
-- Classes: PascalCase
-- Variables, functions: camelCase
-- Constants: ALL_CAPS_WITH_UNDERSCORES
-- Widget filenames: snake_case
+## Directory and File Structure
+- Use `src/main/java/`, `src/main/kotlin/`, `src/main/res/`, `src/test/` directories.
+- One class per file.
+- File names: PascalCase for classes, snake_case for resources.
 
-## Widget Structure
-- Prefer small reusable widgets
-- Keep build methods concise
-- Use StatelessWidget when possible
+## Class and Object Naming
+- Class names: PascalCase (e.g., `MyActivity`).
+- Interface names: PascalCase, optionally prefix with `I`.
+- Function names: camelCase.
+- Variable names: camelCase.
+- Constants: UPPER_SNAKE_CASE.
 
-## State Management
-- Follow chosen state management (Provider, Riverpod, Bloc, etc.)
-- Separate UI and business logic
+## Coding Style
+- Prefer immutable variables (`val`) over mutable (`var`) where possible.
+- Keep functions short, single responsibility.
+- Use Kotlin idioms (e.g., `when`, `let`, `apply`, `also`).
+- Add KDoc comments in English (main), 日本語 / 中文 / 한국어 (supplement).
+
+## Android Guidelines
+- Follow Android Jetpack recommendations.
+- Use ViewModel, LiveData / StateFlow for state management.
+- Use resource strings, dimensions, and colors instead of hard-coded values.
+- Layouts: follow Material Design guidelines.
 
 ## Testing
-- Write unit tests for business logic
-- Widget tests for UI components
+- Use JUnit + AndroidX Test libraries.
+- Name test files as `*Test.kt`.
+- Write tests for Activities, Fragments, ViewModels, and major business logic.
 
-## Formatter & Lint
-- Use `flutter format` / `dart format`
-- Enable recommended lints (e.g., `flutter_lints`)
+## AI Assistance
+- Copilot can scaffold Activities, Fragments, and layouts.
+- Encourage human review for naming, UI conventions, and business logic separation.
+
+## Comments
+- Main language: English
+- Supplement: 日本語 / 中文 / 한국어
