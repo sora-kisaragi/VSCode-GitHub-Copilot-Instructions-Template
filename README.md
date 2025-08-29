@@ -7,7 +7,8 @@ A **ready-to-use template** for setting up [GitHub Copilot](https://docs.github.
 * 📐 Coding conventions (language-specific)
 * 🌱 Git workflow guide
 * 📄 Documentation rules
-* 🤖 Instruction & prompt files for Copilot Chat/Agent
+* 🗂️ Task & supplementary documentation guidelines
+* 🤖 Instruction & prompt files for Copilot Chat/Agent (commit messages, PRs, QA/Planning modes)
 
 This repository helps teams and individuals **onboard GitHub Copilot consistently**, ensuring clear conventions, smooth collaboration, and reproducible development workflows.
 
@@ -16,21 +17,31 @@ This repository helps teams and individuals **onboard GitHub Copilot consistentl
 ## Repository Structure
 
 ```
+
 .github/
-├── copilot-instructions.md          # Core instructions for Copilot
-├── instructions/                    # Project-specific instruction files
-├── prompts/                         # Predefined prompt templates
-├── prompt-snippets/                 # Reusable snippet prompts
-├── workflows/                       # GitHub Actions workflows
+├── copilot-instructions.md          # Core instructions (thinking mode, response rules, etc.)
+├── instructions/
+│   ├── documentation.instructions.md # Documentation generation rules (HLD/LLD, Mermaid, LaTeX)
+│   ├── git\_flow\.instructions.md      # Git workflow usage for Copilot
+│   ├── task\_management.instructions.md # Rules for issue/task handling
+│   └── supplementary\_docs.instructions.md # Optional design/docs guidelines
+├── prompts/
+│   ├── commit-message.prompt.md      # Commit message generation template
+│   ├── pr-review\.prompt.md           # Pull Request review assistance
+│   ├── qa-mode.prompt.md             # QA mode instructions
+│   └── planning-mode.prompt.md       # Planning/design mode instructions
+├── prompt-snippets/                  # Reusable prompt snippets (if needed)
+├── workflows/                        # GitHub Actions workflows
 docs/
-├── git_flow.md                       # Git workflow guide
+├── git\_flow\.md                       # Git workflow guide (human-facing)
 ├── documentation.md                  # Documentation rules and guidelines
-├── coding_styles/                     # Language-specific coding conventions
-└── api_docs.md                        # API documentation templates
+├── coding\_styles/                    # Language-specific coding conventions
+└── api\_docs.md                       # API documentation templates
 src/                                  # Source code
 tests/                                # Test code
-README.md                              # Project README
-```
+README.md                             # Project README
+
+````
 
 ---
 
@@ -41,9 +52,19 @@ README.md                              # Project README
    ```bash
    git clone https://github.com/your-org/copilot-template.git
    ```
+
 2. Adjust instruction files for your project’s language and style.
-3. Define your Git workflow in `docs/git_flow.md`.
-4. Extend prompt templates under `.github/prompts/` as needed.
+   For example:
+
+   * `.github/instructions/documentation.instructions.md` → How Copilot should generate HLD/LLD or Mermaid diagrams
+   * `.github/instructions/git_flow.instructions.md` → How to enforce your Git workflow
+   * `.github/prompts/commit-message.prompt.md` → Generate commit messages consistently
+
+3. Use QA Mode (`qa-mode.prompt.md`) for bug reports, investigations, and clarifications.
+   Use Planning Mode (`planning-mode.prompt.md`) for feature design and task planning.
+
+4. Extend prompt templates under `.github/prompts/` or create reusable snippets in `.github/prompt-snippets/`.
+
 5. Share with your team to maintain consistency.
 
 ---
