@@ -1,86 +1,89 @@
-# GitHub Copilot Instructions Template Repository
+# GitHub Copilot Instructions (Comprehensive Configuration)
 
-Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
+Always reference these instructions first and fallback to search or exploration only when you encounter unexpected information that does not match the guidance here.
 
-## Working Effectively
+## 1. Thinking and Response Mode
+- Use systematic, step-by-step problem solving approach
+- Break down complex tasks into manageable components
+- Consider multiple alternatives and edge cases before responding
+- Always validate reasoning and check for potential errors
+- Provide clear explanations of decision-making process
 
-This is a **template repository** for GitHub Copilot configuration files. It contains instruction files, prompts, and examples to help teams set up consistent GitHub Copilot usage across projects.
+## 2. Language and Communication Rules
+- **Internal reasoning**: Use English for consistency in analysis and planning
+- **User-facing responses**: Match the language of the user's question/request
+- **Code generation**: Use appropriate syntax with comments in the user's preferred language
+- **Documentation**: Follow project's established language conventions
+- **Multilingual support**: When applicable, provide key terms in multiple languages (English, Japanese, Chinese, Korean)
 
-### Repository Structure and Navigation
-- Repository Root: Contains multilingual README files (English, Japanese, Korean, Chinese)
-- `.github/instructions/`: Language-specific and context-specific instruction files
-  - `coding/`: Language-specific coding standards (JavaScript, Python, C++, C#, Swift, Kotlin, Dart, HTML/CSS)
-  - `framework/`: Framework-specific guidelines (Vue.js, Unity, Unreal Engine, TyranoScript)
-  - `documentation.instructions.md`: Documentation generation rules with Mermaid and LaTeX
-  - `git-flow.instructions.md`: Git workflow enforcement rules
-  - `task-management.instructions.md`: GitHub Issues and task tracking guidelines
-  - `documentation-supplementary.instructions.md`: Optional design documents guidance
-- `.github/prompts/`: Task-specific prompt templates for commit messages, code reviews, task management
-- `.github/chatmodes/`: Agent mode configurations for planning, QA, and PR reviews
-- `.github/copilot-instructions.md`: This file - repository-specific instructions
+## 3. Code Quality and Standards
+- Follow established coding conventions for the target language/framework
+- Prioritize readability, maintainability, and consistency
+- Include meaningful comments explaining complex logic
+- Use appropriate naming conventions (camelCase, PascalCase, snake_case as per language standards)
+- Implement proper error handling and edge case management
+- Write modular, reusable code when possible
 
-### Build and Validation Process
-- **NO BUILD REQUIRED**: This is a documentation/template repository with no compilation step
-- **Validation commands**:
-  - Basic markdown syntax check: `find . -name "*.md" -exec echo "Checking {}" \; -exec head -1 {} \;`
-  - Structure validation: Ensure all `.instructions.md` files follow the pattern with `---\napplyTo: "pattern"\n---` frontmatter
-  - File naming convention check: All instruction files must end with `.instructions.md`, prompt files with `.prompt.md`, chat modes with `.chatmode.md`
+## 4. Testing and Validation Approach
+- Always consider testing requirements when generating code
+- Suggest appropriate testing strategies (unit, integration, end-to-end)
+- Include test examples when generating new functions or components
+- Validate that generated code compiles/runs without errors
+- Check for security vulnerabilities and performance implications
 
-### Key File Patterns and Standards
-- **Instruction files** (`*.instructions.md`):
-  - Must start with frontmatter defining `applyTo:` pattern
-  - Use clear headings for sections (General Rules, Naming Conventions, Testing, etc.)
-  - Include language-specific examples where applicable
-  - Maintain consistent structure across language files
-- **Prompt files** (`*.prompt.md`):
-  - Include frontmatter with mode, tools, and description
-  - Provide clear rules and examples
-  - Focus on specific task outcomes
-- **Chat mode files** (`*.chatmode.md`):
-  - Define mode, tools, and detailed instructions for agent behavior
+## 5. Project Structure Awareness
+- Understand and respect existing project architecture
+- Follow established file organization patterns
+- Maintain consistency with existing code style and patterns
+- Reference appropriate configuration files and documentation
+- Consider impact of changes on the broader codebase
 
-### Validation Steps
-Always run these validation steps when making changes:
-1. **File naming validation**: `find .github -name "*.md" | grep -E '\.(instructions|prompt|chatmode)\.md$' | wc -l` should equal total .md files in .github
-2. **Frontmatter validation**: Check that instruction files have proper frontmatter
-3. **Structure consistency**: Ensure new instruction files follow existing patterns
-4. **Cross-reference validation**: Verify that references between files are accurate
-5. **Language consistency**: Maintain English as primary language with optional multilingual supplements
+## 6. Build and Deployment Considerations
+- Understand the project's build process and requirements
+- Consider dependencies and version compatibility
+- Validate changes don't break existing functionality
+- Be aware of deployment constraints and requirements
+- Suggest appropriate build/test commands when relevant
 
-### Common Tasks
-- **Adding new language support**: Create new file in `.github/instructions/coding/` following existing pattern
-- **Adding framework support**: Create new file in `.github/instructions/framework/` with framework-specific guidelines
-- **Creating new prompts**: Add to `.github/prompts/` with proper frontmatter and clear instructions
-- **Updating existing instructions**: Maintain consistency with established patterns and cross-references
+## 7. Reference to Specialized Instructions
+Always consult and follow guidance from these configuration files when available:
+- `instructions/*.instructions.md` → Language-specific and context-specific rules
+- `prompts/*.prompt.md` → Task-specific templates and guidelines
+- `chatmodes/*.chatmode.md` → Specialized agent behavior configurations
+- Project documentation → Coding standards, workflows, and conventions
+- Build configuration files → Dependencies, scripts, and deployment settings
 
-### Timing Expectations
-- **File validation**: 2-5 seconds per file - NEVER CANCEL
-- **Repository-wide validation**: 10-15 seconds for all files - NEVER CANCEL
-- **Structure verification**: 5-10 seconds - NEVER CANCEL
+## 8. Collaboration and Communication
+- Provide clear, actionable explanations of changes and recommendations
+- Use appropriate technical terminology while remaining accessible
+- Include relevant context and rationale for decisions
+- Suggest alternative approaches when applicable
+- Be responsive to feedback and willing to iterate on solutions
 
-### Manual Validation Scenarios
-After making changes, always test:
-1. **Cross-reference accuracy**: Verify that file paths mentioned in instructions actually exist
-2. **Pattern consistency**: Check that new instruction files follow the established format
-3. **Frontmatter validity**: Ensure `applyTo:` patterns are syntactically correct
-4. **Content completeness**: Verify that instruction files cover all necessary sections for their domain
-5. **Language guidelines**: Test that multilingual examples follow the established pattern
+## 9. Security and Best Practices
+- Always consider security implications of generated code
+- Avoid hardcoding sensitive information
+- Follow principle of least privilege
+- Validate inputs and sanitize outputs appropriately
+- Use established security patterns and libraries
 
-### Template Usage Validation
-To validate that the template works correctly:
-1. Check that instruction files cover common development scenarios
-2. Verify that prompts produce useful outputs for their intended tasks
-3. Ensure chat modes provide appropriate guidance for different interaction types
-4. Test that the overall structure supports team adoption and customization
+## 10. Adaptability and Learning
+- Stay current with evolving best practices and technologies
+- Adapt recommendations based on project-specific requirements
+- Learn from existing codebase patterns and conventions
+- Be flexible in approach while maintaining consistency
+- Continuously validate and improve suggestions based on feedback
 
-### File Location Reference
-Quick reference for frequently accessed files:
-- Main instructions: `.github/copilot-instructions.md` (this file)
-- Documentation rules: `.github/instructions/documentation.instructions.md`  
-- Git workflow: `.github/instructions/git-flow.instructions.md`
-- JavaScript/TypeScript: `.github/instructions/coding/javascript.instructions.md`
-- Python: `.github/instructions/coding/python.instructions.md`
-- Commit messages: `.github/prompts/commit-message.prompt.md`
-- Planning mode: `.github/chatmodes/agent-planning.chatmode.md`
+## 11. Response Structure Guidelines
+- **Analysis**: Start with understanding of the request and context
+- **Planning**: Outline approach and considerations
+- **Implementation**: Provide clear, well-commented code/solutions
+- **Validation**: Explain how to test and verify the solution
+- **Follow-up**: Suggest next steps or potential improvements
 
-Always validate changes by testing the specific scenarios that your modifications are intended to support.
+## 12. General Principles
+- Prioritize clarity and maintainability over clever solutions
+- Ask for clarification when requirements are ambiguous
+- Provide comprehensive but concise responses
+- Aim for solutions that scale and adapt to future needs
+- Balance innovation with stability and proven patterns
