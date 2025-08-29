@@ -19,27 +19,40 @@
 ```
 
 .github/
-├── copilot-instructions.md           # Copilotの基本ルール（思考モード・返答規則など）
+├── STANDARDIZATION_TEMPLATE.md      # 命令ファイル間の一貫性を保つためのガイドライン
+├── copilot-instructions.md          # Copilotの基本ルール（思考モード・返答規則など）
 ├── instructions/
+│   ├── coding/                       # 言語別のコーディング規約
+│   │   ├── cpp.instructions.md       # C++コーディング規約
+│   │   ├── csharp.instructions.md    # C#コーディング規約
+│   │   ├── dart.instructions.md      # Dart/Flutterコーディング規約
+│   │   ├── html_css.instructions.md  # HTML/CSSコーディング規約
+│   │   ├── javascript.instructions.md # JavaScript/TypeScriptコーディング規約
+│   │   ├── kotlin.instructions.md    # Kotlin/Androidコーディング規約
+│   │   ├── python.instructions.md    # Pythonコーディング規約
+│   │   └── swift.instructions.md     # Swift/iOSコーディング規約
+│   ├── framework/                    # フレームワーク固有のガイドライン
+│   │   ├── tyranoscript.instructions.md # TyranoScript固有のガイドライン
+│   │   ├── unity.instructions.md     # Unityゲームエンジンガイドライン
+│   │   ├── unrealengine.instructions.md # Unreal Engineガイドライン
+│   │   └── vue.instructions.md       # Vue.jsフレームワークガイドライン
 │   ├── documentation.instructions.md  # ドキュメント生成ルール (HLD/LLD, Mermaid, LaTeX)
-│   ├── git\_flow\.instructions.md       # Git運用フローをCopilotで使うためのルール
-│   ├── task\_management.instructions.md # Issue/タスク管理ルール
-│   └── supplementary\_docs.instructions.md # 補足資料（DB/業務フロー/APIなど）の作成ガイド
+│   ├── documentation-supplementary.instructions.md # 補足ドキュメントガイドライン
+│   ├── git-flow.instructions.md       # Git運用フローをCopilotで使うためのルール
+│   └── task-management.instructions.md # Issue/タスク管理ルール
 ├── prompts/
-│   ├── commit-message.prompt.md       # コミットメッセージ生成テンプレート
-│   ├── pr-review\.prompt.md            # Pull Requestレビュー補助
-│   ├── qa-mode.prompt.md              # QAモード指示
-│   └── planning-mode.prompt.md        # 計画モード指示
-├── prompt-snippets/                   # 再利用可能なスニペットプロンプト
-├── workflows/                         # GitHub Actions ワークフロー
-docs/
-├── git\_flow\.md                        # Git運用フロー（人間向け）
-├── documentation.md                   # ドキュメント作成ルール
-├── coding\_styles/                     # 言語別のコーディング規約
-└── api\_docs.md                        # APIドキュメントテンプレート
-src/                                   # ソースコード
-tests/                                 # テストコード
-README.ja.md                           # プロジェクトREADME（日本語版）
+│   ├── code-review.prompt.md         # コードレビュー支援テンプレート
+│   ├── commit-message.prompt.md      # コミットメッセージ生成テンプレート
+│   └── task-management.prompt.md     # タスク管理支援テンプレート
+├── chatmodes/                        # エージェントベースのチャットモード設定
+│   ├── agent-planning.chatmode.md    # 計画・設計モードエージェント
+│   ├── agent-qa.chatmode.md          # QA・調査モードエージェント
+│   └── pr-review.chatmode.md         # Pull Requestレビューエージェント
+LICENSE                               # MIT License
+README.md                             # プロジェクトREADME（英語版）
+README.ja.md                          # プロジェクトREADME（日本語版）
+README.kr.md                          # プロジェクトREADME（韓国語版）
+README.zh.md                          # プロジェクトREADME（中国語版）
 
 ````
 
@@ -50,22 +63,28 @@ README.ja.md                           # プロジェクトREADME（日本語版
 1. このリポジトリをクローンします:
 
    ```bash
-   git clone https://github.com/your-org/copilot-template.git
+   git clone https://github.com/sora-kisaragi/VSCode-GitHub-Copilot-Instructions-Template.git
    ```
 
 2. プロジェクトの言語やスタイルに合わせて instruction ファイルを調整してください。
    例:
 
    * `.github/instructions/documentation.instructions.md` → HLD/LLDやMermaid図の生成ルール
-   * `.github/instructions/git_flow.instructions.md` → チームのGit運用ルール
+   * `.github/instructions/git-flow.instructions.md` → チームのGit運用ルール
+   * `.github/instructions/coding/` → 言語別のコーディング規約（JavaScript、Python、C++など）
+   * `.github/instructions/framework/` → フレームワーク固有のガイドライン（Unity、Vue.jsなど）
    * `.github/prompts/commit-message.prompt.md` → 一貫したコミットメッセージ生成
 
-3. バグ報告や調査には **QAモード (`qa-mode.prompt.md`)** を、
-   設計や計画には **計画モード (`planning-mode.prompt.md`)** を利用してください。
+3. 特定のタスクにはエージェントベースのチャットモードを利用してください:
+   * **QAモード** (`.github/chatmodes/agent-qa.chatmode.md`) → バグ報告、調査、説明
+   * **計画モード** (`.github/chatmodes/agent-planning.chatmode.md`) → 機能設計とタスク計画
+   * **PRレビューモード** (`.github/chatmodes/pr-review.chatmode.md`) → Pull Requestレビュー支援
 
-4. `.github/prompts/` 以下のテンプレートを拡張したり、再利用用に `.github/prompt-snippets/` にまとめることも可能です。
+4. `.github/prompts/` 以下のプロンプトテンプレートを一貫したやり取りのためにカスタマイズしてください。
 
-5. チームで共有し、統一的な運用を実現しましょう。
+5. 命令ファイル間の一貫性を保つためのガイドラインは `.github/STANDARDIZATION_TEMPLATE.md` を参照してください。
+
+6. チームで共有し、統一的な運用を実現しましょう。
 
 ---
 
