@@ -26,12 +26,16 @@ This repository helps teams and individuals **onboard GitHub Copilot consistentl
 │   │   ├── cpp.instructions.md       # C++ coding conventions
 │   │   ├── csharp.instructions.md    # C# coding conventions
 │   │   ├── dart.instructions.md      # Dart/Flutter coding conventions
+│   │   ├── go.instructions.md        # Go coding conventions
 │   │   ├── html_css.instructions.md  # HTML/CSS coding conventions
 │   │   ├── javascript.instructions.md # JavaScript/TypeScript coding conventions
 │   │   ├── kotlin.instructions.md    # Kotlin/Android coding conventions
 │   │   ├── python.instructions.md    # Python coding conventions
+│   │   ├── ruby.instructions.md      # Ruby coding conventions
+│   │   ├── rust.instructions.md      # Rust coding conventions
 │   │   └── swift.instructions.md     # Swift/iOS coding conventions
 │   ├── framework/                    # Framework-specific guidelines
+│   │   ├── react.instructions.md     # React framework guidelines
 │   │   ├── tyranoscript.instructions.md # TyranoScript specific guidelines
 │   │   ├── unity.instructions.md     # Unity game engine guidelines
 │   │   ├── unrealengine.instructions.md # Unreal Engine guidelines
@@ -41,12 +45,16 @@ This repository helps teams and individuals **onboard GitHub Copilot consistentl
 │   ├── git-flow.instructions.md      # Git workflow usage for Copilot
 │   └── task-management.instructions.md # Rules for issue/task handling
 ├── prompts/
-│   ├── code-review.prompt.md         # Code review assistance template
+│   ├── code-review.prompt.md         # Comprehensive code review assistance template
 │   ├── commit-message.prompt.md      # Commit message generation template
-│   └── task-management.prompt.md     # Task management assistance template
+│   ├── database-design.prompt.md     # Database design and modeling guidance
+│   ├── development-workflow.prompt.md # Complete development lifecycle guidance
+│   └── task-management.prompt.md     # Enhanced task management assistance template
 ├── chatmodes/                        # Agent-based chat mode configurations
 │   ├── agent-planning.chatmode.md    # Planning/design mode agent
 │   ├── agent-qa.chatmode.md          # QA/investigation mode agent
+│   ├── debugging-troubleshooting.chatmode.md # Debugging and troubleshooting agent
+│   ├── documentation-generation.chatmode.md  # Documentation generation agent
 │   └── pr-review.chatmode.md         # Pull Request review agent
 LICENSE                               # MIT License
 README.md                             # Project README (English)
