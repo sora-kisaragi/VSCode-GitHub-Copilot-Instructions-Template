@@ -19,27 +19,40 @@ This repository helps teams and individuals **onboard GitHub Copilot consistentl
 ```
 
 .github/
+├── STANDARDIZATION_TEMPLATE.md      # Guidelines for maintaining consistency across instruction files
 ├── copilot-instructions.md          # Core instructions (thinking mode, response rules, etc.)
 ├── instructions/
+│   ├── coding/                       # Language-specific coding standards
+│   │   ├── cpp.instructions.md       # C++ coding conventions
+│   │   ├── csharp.instructions.md    # C# coding conventions
+│   │   ├── dart.instructions.md      # Dart/Flutter coding conventions
+│   │   ├── html_css.instructions.md  # HTML/CSS coding conventions
+│   │   ├── javascript.instructions.md # JavaScript/TypeScript coding conventions
+│   │   ├── kotlin.instructions.md    # Kotlin/Android coding conventions
+│   │   ├── python.instructions.md    # Python coding conventions
+│   │   └── swift.instructions.md     # Swift/iOS coding conventions
+│   ├── framework/                    # Framework-specific guidelines
+│   │   ├── tyranoscript.instructions.md # TyranoScript specific guidelines
+│   │   ├── unity.instructions.md     # Unity game engine guidelines
+│   │   ├── unrealengine.instructions.md # Unreal Engine guidelines
+│   │   └── vue.instructions.md       # Vue.js framework guidelines
 │   ├── documentation.instructions.md # Documentation generation rules (HLD/LLD, Mermaid, LaTeX)
-│   ├── git\_flow\.instructions.md      # Git workflow usage for Copilot
-│   ├── task\_management.instructions.md # Rules for issue/task handling
-│   └── supplementary\_docs.instructions.md # Optional design/docs guidelines
+│   ├── documentation-supplementary.instructions.md # Supplementary documentation guidelines
+│   ├── git-flow.instructions.md      # Git workflow usage for Copilot
+│   └── task-management.instructions.md # Rules for issue/task handling
 ├── prompts/
+│   ├── code-review.prompt.md         # Code review assistance template
 │   ├── commit-message.prompt.md      # Commit message generation template
-│   ├── pr-review\.prompt.md           # Pull Request review assistance
-│   ├── qa-mode.prompt.md             # QA mode instructions
-│   └── planning-mode.prompt.md       # Planning/design mode instructions
-├── prompt-snippets/                  # Reusable prompt snippets (if needed)
-├── workflows/                        # GitHub Actions workflows
-docs/
-├── git\_flow\.md                       # Git workflow guide (human-facing)
-├── documentation.md                  # Documentation rules and guidelines
-├── coding\_styles/                    # Language-specific coding conventions
-└── api\_docs.md                       # API documentation templates
-src/                                  # Source code
-tests/                                # Test code
-README.md                             # Project README
+│   └── task-management.prompt.md     # Task management assistance template
+├── chatmodes/                        # Agent-based chat mode configurations
+│   ├── agent-planning.chatmode.md    # Planning/design mode agent
+│   ├── agent-qa.chatmode.md          # QA/investigation mode agent
+│   └── pr-review.chatmode.md         # Pull Request review agent
+LICENSE                               # MIT License
+README.md                             # Project README (English)
+README.ja.md                          # Project README (Japanese)
+README.kr.md                          # Project README (Korean)
+README.zh.md                          # Project README (Chinese)
 
 ````
 
@@ -50,22 +63,28 @@ README.md                             # Project README
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-org/copilot-template.git
+   git clone https://github.com/sora-kisaragi/VSCode-GitHub-Copilot-Instructions-Template.git
    ```
 
 2. Adjust instruction files for your project’s language and style.
    For example:
 
    * `.github/instructions/documentation.instructions.md` → How Copilot should generate HLD/LLD or Mermaid diagrams
-   * `.github/instructions/git_flow.instructions.md` → How to enforce your Git workflow
+   * `.github/instructions/git-flow.instructions.md` → How to enforce your Git workflow
+   * `.github/instructions/coding/` → Language-specific coding conventions (JavaScript, Python, C++, etc.)
+   * `.github/instructions/framework/` → Framework-specific guidelines (Unity, Vue.js, etc.)
    * `.github/prompts/commit-message.prompt.md` → Generate commit messages consistently
 
-3. Use QA Mode (`qa-mode.prompt.md`) for bug reports, investigations, and clarifications.
-   Use Planning Mode (`planning-mode.prompt.md`) for feature design and task planning.
+3. Use agent-based chat modes for specific tasks:
+   * **QA Mode** (`.github/chatmodes/agent-qa.chatmode.md`) → Bug reports, investigations, and clarifications
+   * **Planning Mode** (`.github/chatmodes/agent-planning.chatmode.md`) → Feature design and task planning
+   * **PR Review Mode** (`.github/chatmodes/pr-review.chatmode.md`) → Pull Request review assistance
 
-4. Extend prompt templates under `.github/prompts/` or create reusable snippets in `.github/prompt-snippets/`.
+4. Customize prompt templates under `.github/prompts/` for consistent interactions.
 
-5. Share with your team to maintain consistency.
+5. Reference `.github/STANDARDIZATION_TEMPLATE.md` for guidelines on maintaining consistency across instruction files.
+
+6. Share with your team to maintain consistency.
 
 ---
 
