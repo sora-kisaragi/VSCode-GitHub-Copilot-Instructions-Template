@@ -1,15 +1,29 @@
 ---
 mode: ask
 tools: [git]
-description: Generate commit messages following the Conventional Commits specification.
+description: Generate a clear, conventional commit message based on the changes in the current branch or staged files.
 ---
 
-# Commit Message Prompt
+# Commit Message Generator
 
-- Use present tense ("Fix bug" not "Fixed bug").
-- Start with a type: feat, fix, docs, style, refactor, test, chore.
-- Include a scope in parentheses if applicable (e.g., `feat(api): ...`).
-- Provide a concise description (50 characters max recommended).
-- Optionally include a longer body explaining what and why.
-- If applicable, reference issue numbers (#123) or PR numbers.
-- Always maintain clarity and readability.
+Your goal is to generate a **concise, meaningful, and conventional commit message**.
+
+## Rules:
+- Use **Conventional Commits style**: `type(scope): short description`
+  - Types: feat, fix, docs, style, refactor, test, chore
+- Scope is optional but should describe the area of the project affected
+- Include a longer description in the body if necessary
+- Reference related Issues or PRs if available (`#123`)
+- Always use **present tense**: e.g., "Add feature" not "Added feature"
+- Output **only the commit message** in Markdown code block
+
+## Example
+
+```text
+feat(api): add user authentication endpoint
+
+- Implement JWT-based login
+- Validate email and password
+- Update documentation
+- Closes #42
+```
